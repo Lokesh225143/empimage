@@ -1,0 +1,82 @@
+<!-- AREA TO DISPLAY ALL THE employeeLOYEES -->
+<div class="container-fluid g-0 p-2">
+    <div class="row g-0">
+        <!-- image -->
+        <div class="col-md-2 d-flex justify-content-center align-items-center">
+            <img src="../../assets/images/{{employee.profile}}" alt="profileImage" class="profile">
+        </div>
+
+
+        <!-- personalDetails -->
+        <div class="col ps-2">
+            <!-- firstname && Edit && delete -->
+            <div class="row g-0  "> 
+
+              <div class="col-md-10 text-center">
+                  <span class="name">{{employee.firstname | titlecase}} {{employee.lastname | titlecase}}</span>
+              </div>
+            
+                <div class="col-md-2 d-flex justify-content-center align-items-center ">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-outline-success" (click)="editEmp(employee.id)">Edit</button>
+                        <button type="button" class="btn btn-outline-danger" (click)=" deleteEmp()">Delete</button>
+                            
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-0 mt-3 ">
+                <!-- table for personalDetails -->
+                <div class="col md">
+                 <table class="table table-hover mx-auto">
+                     <thead class="text-center fs-5 fst-italic text-secondary">
+                         <tr>
+                             <td colspan="2">Personal Details</td>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                             <td>birthdate</td>
+                             <td>{{employee.birthday}}</td>
+                         </tr>
+                         <tr>
+                             <td>gender</td>
+                             <td>{{employee.gender == 'M' ? "Male" : "Female" }}</td>
+                         </tr>
+                         <tr>
+                             <td>education</td>
+                             <td>{{employee.education}}</td>
+                         </tr>
+                     </tbody>
+
+                 </table>
+                </div>
+                <!-- tablefor jobDetails -->
+                <div class="col">
+                    <table class="table table-hover mx-auto">
+                        <thead class="text-center fs-5 fst-italic text-secondary">
+                            <tr>
+                                <td colspan="2">job Details</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>company</td>
+                                <td>{{employee.company}}</td>
+                            </tr>
+                            <tr>
+                                <td>Experience</td>
+                                <td>{{employee.jobExperience}}</td>
+                            </tr>
+                            <tr>
+                                <td>salary</td>
+                                <td>{{employee.salary}}</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

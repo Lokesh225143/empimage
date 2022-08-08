@@ -1,0 +1,27 @@
+<div class="container-fluid g-0">
+
+    <!-- HEADER -->
+    <app-header></app-header>
+  
+    <!-- MAIN CONTENT -->
+    <main class="black-borde">
+      <!-- TOOBAR TO ADD AND SEARCH EMPLOYEES -->
+      <div class="toolbar">
+  
+        <div class="add-employee">
+          <button type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="modal"
+          routerLink="form">Add Employee</button>
+        </div>
+        <div class="get-employee">
+          <button type="button" class="btn btn-outline-warning btn-lg" data-bs-toggle="modal"
+          routerLink="list">get Employee</button>
+        </div>
+  
+        <div class="search-employees">
+          <input type="search" [(ngModel)]="serachEmployee" (keyup)="search($event)" class="form-control" placeholder="Search Employees">
+        </div>
+  
+      </div>
+    </main>
+  </div>
+<router-outlet></router-outlet>

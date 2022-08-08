@@ -1,0 +1,9 @@
+.modal-header{
+    background-color: skyblue;
+}
+.modal-body{
+  /* background-color: yellow;   */
+}
+.modal-footer{
+    background-color: limegreen;
+}
