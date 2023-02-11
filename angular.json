@@ -1,7 +1,11 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
+<<<<<<< Updated upstream
     "analytics": "a35437c1-3fc4-42f5-ac4c-c1aa3458f346"
+=======
+    "analytics": "0a00f852-6755-46cf-9864-f8ef683c2f7b"
+>>>>>>> Stashed changes
   },
   "version": 1,
   "newProjectRoot": "projects",
@@ -33,8 +37,16 @@
             "styles": [
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
+<<<<<<< Updated upstream
+=======
+              
+>>>>>>> Stashed changes
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+            
           },
           "configurations": {
             "production": {

@@ -1,0 +1,120 @@
+<div class="container">
+    <div class="card text-center">
+        <div class="card-body">
+            <button class="usb">Adduser</button>
+            <div class="box">
+                <form [formGroup]="registrationForm" (ngSubmit)="onSubmit(registrationForm)">
+                    <div class="row">
+
+                        <div class="form-group inputbox mb-3">
+                            <label>FirstName:</label>
+                            <input type="text" class="form-control" placeholder="firstName" formControlName="firstName"
+                                [class.is-invalid]="f.firstName.invalid && f.firstName.touched" required>
+                        </div>
+                        <div *ngIf="f.firstName.invalid && f.firstName.touched">
+                            <small class="text-danger" *ngIf="f.firstName.errors?.required" >Firstname is required </small>
+                         </div>
+                        <div class="form-group inputbox mb-3">
+                            <label>LastName:</label>
+                            <input type="text" class="form-control" placeholder="lastName" formControlName="lastName"
+                                [class.is-invalid]="f.lastName.invalid && f.lastName.touched">
+                        </div>
+                        <div *ngIf="f.lastName.invalid && f.lastName.touched">
+                            <small class="text-danger" *ngIf="f.lastName.errors?.required" >LastName is required </small>
+                         </div>
+                       
+                        <div class="form-group inputbox mb-3">
+                            <label>Email:</label>
+                            <input type="email" class="form-control" placeholder="email" formControlName="email"
+                                [class.is-invalid]="f.email.invalid && f.email.touched">
+                        </div>
+                        <div *ngIf="f.email.invalid && f.email.touched">
+                            <small class="text-danger" *ngIf="f.email.errors?.required" >Email is required </small>
+                         </div>
+                       
+
+                        <div class="form-group inputbox mb-3">
+                            <label>phone:</label>
+                            <input type="number" class="form-control" placeholder="phonenumber" formControlName="phone"
+                                [class.is-invalid]="f.phone.invalid && f.phone.touched">
+                        </div>
+                        <div *ngIf="f.phone.invalid && f.phone.touched">
+                            <small class="text-danger" *ngIf="f.phone.errors?.required" >phonenumber is required </small>
+                         </div>
+                       
+
+                        <div class="form-group inputbox mb-3">
+                            <label>Company:</label>
+                            <input type="text" class="form-control" placeholder="phonenumber" formControlName="company"
+                                [class.is-invalid]="f.company.invalid && f.company.touched">
+                        </div>
+                        <div *ngIf="f.company.invalid && f.company.touched">
+                            <small class="text-danger" *ngIf="f.company.errors?.required" >company is required </small>
+                         </div>
+                       
+                        <div class="group-gap">
+                            <h5 class="mb-3">Gender</h5>
+                            <div class="d-block my-3">
+
+                                <div class="custom-control custom-radio">
+                                    <input id="male" type="radio" class="custom-control-input" value="male"
+                                        name="gender" formControlName="gender" (change)="radioChangeHandler($event)">
+                                    <label class="custom-control-label" [class.is-invalid]="f.gender.invalid && f.gender.touched" for="male">Male</label>
+                                </div>
+
+                                <div class="custom-control custom-radio">
+                                    <input id="female" type="radio" class="custom-control-input" value="female"
+                                        name="gender" formControlName="gender" (change)="radioChangeHandler($event)">
+                                    <label class="custom-control-label" [class.is-invalid]="f.gender.invalid && f.gender.touched" for="male" for="female">Female</label>
+                                </div>
+
+
+                                <div *ngIf="f.gender.invalid && f.gender.touched">
+                                    <span *ngIf="f.gender.errors?.required">Gender is required</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group inputbox mb-3">
+                            <label>Dateofbirth</label>
+                            <input type="date" class="form-control" placeholder="Date of birth"
+                                [class.is-invalid]="f.dob.invalid && f.dob.touched" formControlName="dob">
+                        </div>
+                        <div *ngIf="f.dob.invalid && f.dob.touched">
+                            <small class="text-danger" *ngIf="f.dob.errors?.required" >Date of Birh is required </small>
+                         </div>
+                       
+                        
+                        <div class="form-group inputbox mb-3">
+                            <label>Password</label>
+                            <input type="password" class="form-control" placeholder="password"
+                                [class.is-invalid]="f.password.invalid && f.password.touched"
+                                formControlName="password" required>
+                        </div>
+                        <div *ngIf="f.password.invalid && f.password.touched">
+                            <small class="text-danger" *ngIf="f.password.errors?.required" >password is required </small>
+                         </div>
+                       
+                        <div class="form-group inputbox mb-3">
+                            <label>ConfirmPassword:</label>
+                            <input type="password" class="form-control" placeholder="confirmpassword"
+                                [class.is-invalid]="f.confirmpassword.invalid && f.confirmpassword.touched"
+                                formControlName="confirmpassword" required>
+
+                        </div>
+                        <div *ngIf="f.confirmpassword.invalid && f.confirmpassword.touched">
+                            <small class="text-danger" *ngIf="f.confirmpassword.errors?.required" >confirmpassword is required </small>
+                         </div>
+                         
+                    </div>
+
+                    <div class="btns">
+                        <button type="submit">submit</button>
+                        <button type="button" (click)="reset()">reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

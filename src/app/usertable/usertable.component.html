@@ -1,0 +1,30 @@
+<table style="width: 800px;" class="table ">
+  <thead>
+    <tr class="bg-danger">
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Company</th>
+      <th>DOB</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let u of users;let i = index">
+      <td>{{u.firstName}}</td>
+      <td>{{u.lastName}}</td>
+      <td>{{u.Email}}</td>
+      <td>{{u.phone}}</td>
+      <td>{{u.company}}</td>
+      <td>{{u.dob}}</td>
+      <td>
+        <button class="btn btn-primary" (click)="updateUser(u.id)">edit</button>
+      </td>
+      <td>
+        <button class="btn btn-primary" (click)="deleteUser(u.id)">delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

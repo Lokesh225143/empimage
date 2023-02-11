@@ -1,0 +1,154 @@
+<p>single works!</p>
+<div class="container">
+    <div class="card text-center">
+        <div class="card-body">
+            <button class="usb">Adduser</button>
+            <div class="box">
+                <form [formGroup]="registrationForm" (ngSubmit)="onSubmit(registrationForm)">
+                    <div class="row">
+
+                        <div class="form-group inputbox mb-3">
+                            <label>FirstName:</label>
+                            <input type="text" class="form-control" placeholder="firstName" formControlName="firstName"
+                                [class.is-invalid]="isSubmitt && f.firstName.invalid" required>
+                        </div>
+
+                        <div >
+                            <small class="text-danger"*ngIf="isSubmitt && f.firstName.invalid" >Firstname is required </small>
+                         </div>
+                        <div class="form-group inputbox mb-3">
+                            <label>LastName:</label>
+                            <input type="text" class="form-control" placeholder="lastName" formControlName="lastName"
+                                [class.is-invalid]="isSubmitt && f.lastName.invalid">
+                        </div>
+                        <div >
+                            <small class="text-danger"*ngIf="isSubmitt && f.lastName.invalid" >lastName is required </small>
+                         </div>
+                       
+                        <div class="form-group inputbox mb-3">
+                            <label>Email:</label>
+                            <input type="email" class="form-control" placeholder="email" formControlName="email"
+                                [class.is-invalid]="isSubmitt && f.email.invalid">
+                        </div>
+                        <div >
+                            <small class="text-danger"*ngIf="isSubmitt && f.email.invalid" >Firstname is required </small>
+                         </div>
+                       
+
+                        <div class="form-group inputbox mb-3">
+                            <label>phone:</label>
+                            <input type="number" class="form-control" placeholder="phonenumber" formControlName="phone"
+                                [class.is-invalid]="isSubmitt && f.phone.invalid">
+                        </div>
+                        <div>
+                            <small class="text-danger" *ngIf="isSubmitt && f.phone.invalid" >phonenumber is required </small>
+                         </div>
+                       
+
+                        <div class="form-group inputbox mb-3">
+                            <label>Company:</label>
+                            <input type="text" class="form-control" placeholder="phonenumber" formControlName="company"
+                                [class.is-invalid]="isSubmitt && f.company.invalid">
+                        </div>
+                        <div >
+                            <small class="text-danger" *ngIf="isSubmitt && f.company.invalid" >company is required </small>
+                         </div>
+                       
+                        <div class="group-gap">
+                            <h5 class="mb-3">Gender</h5>
+                            <div class="d-block my-3">
+
+                                <div class="custom-control custom-radio">
+                                    <input id="male" type="radio" class="custom-control-input" value="male"
+                                        name="gender" formControlName="gender" >
+                                    <label class="custom-control-label" [class.is-invalid]="isSubmitt && f.gender.invalid" for="male">Male</label>
+                                </div>
+
+                                <div class="custom-control custom-radio">
+                                    <input id="female" type="radio" class="custom-control-input" value="female"
+                                        name="gender" formControlName="gender" >
+                                    <label class="custom-control-label" [class.is-invalid]="isSubmitt && f.gender.invalid" for="male" for="female">Female</label>
+                                </div>
+
+
+                                <div >
+                                    <span class="text-danger" *ngIf="isSubmitt && f.gender.invalid">Gender is required</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group inputbox mb-3">
+                            <label>Dateofbirth</label>
+                            <input type="date" class="form-control" placeholder="Date of birth"
+                                [class.is-invalid]="isSubmitt && f.dob.invalid" formControlName="dob">
+                        </div>
+                        <div *ngIf="isSubmitt && f.dob.invalid">
+                            <small class="text-danger"*ngIf="isSubmitt && f.dob.invalid" >Date of Birh is required </small>
+                         </div>
+                       
+                        
+                        <div class="form-group inputbox mb-3">
+                            <label>Password</label>
+                            <input type="password" class="form-control" placeholder="password"
+                                [class.is-invalid]="isSubmitt && f.password.invalid"
+                                formControlName="password" required>
+                        </div>
+                        <div>
+                            <small class="text-danger" *ngIf="isSubmitt && f.password.invalid" >password is required </small>
+                         </div>
+                       
+                        <div class="form-group inputbox mb-3">
+                            <label>ConfirmPassword:</label>
+                            <input type="password" class="form-control" placeholder="confirmpassword"
+                                [class.is-invalid]="isSubmitt && f.confirmpassword.invalid"
+                                formControlName="confirmpassword" required>
+
+                        </div>
+                        <div >
+                            <small class="text-danger" *ngIf="isSubmitt && f.confirmpassword.invalid" >confirmpassword is required </small>
+                         </div>
+                         
+                    </div>
+
+                    <div class="btns">
+                        <button type="submit">{{actionButton}}</button>
+                        <button type="button" (click)="reset()">reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<table style="width: 800px;" class="table ">
+    <thead>
+      <tr class="bg-danger">
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Company</th>
+        <th>DOB</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of users;let i = index">
+        <td>{{u.firstName}}</td>
+        <td>{{u.lastName}}</td>
+        <td>{{u.Email}}</td>
+        <td>{{u.phone}}</td>
+        <td>{{u.company}}</td>
+        <td>{{u.dob}}</td>
+        <td>
+          <button class="btn btn-primary" (click)="edit(u)">edit</button>
+        </td>
+        <td>
+          <button class="btn btn-primary" (click)="deleteUser(u.id)">delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

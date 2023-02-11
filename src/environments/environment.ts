@@ -4,7 +4,11 @@
 
 export const environment = {
   production: false,
+<<<<<<< Updated upstream
   api:"http://localhost:3000/empProfile"
+=======
+  api:"http://localhost:3000/user"
+>>>>>>> Stashed changes
 };
 
 /*

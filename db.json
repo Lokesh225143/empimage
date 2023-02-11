@@ -1,4 +1,5 @@
 {
+<<<<<<< Updated upstream
   "empProfile": [
     {
       "firstname": "Ravali",
@@ -167,6 +168,56 @@
       "salary": 45,
       "id": 14,
       "profile": "Lokesh.jpeg"
+=======
+  "user": [
+    {
+      "firstName": "Ravali madala",
+      "lastName": "madala",
+      "email": "lokesh1234@gmail.com",
+      "phone": 8074094019,
+      "company": "Infosys",
+      "gender": "Female",
+      "dob": "1999-11-06",
+      "password": "1234",
+      "confirmpassword": "1234",
+      "id": 1
+    },
+    {
+      "firstName": "Lokesh sangala",
+      "lastName": "Dharmic",
+      "email": "lokesh@gmail.com",
+      "phone": 9398810150,
+      "company": "Infosys",
+      "gender": "male",
+      "dob": "1993-03-26",
+      "password": "1234",
+      "confirmpassword": "1234",
+      "id": 2
+    },
+    {
+      "firstName": "venu",
+      "lastName": "shagonda",
+      "email": "venu@gmail,com",
+      "phone": 8914328674,
+      "company": "varcas",
+      "gender": "Male",
+      "dob": "1992-12-01",
+      "password": "1234",
+      "confirmpassword": "1234",
+      "id": 3
+    },
+    {
+      "firstName": "ajay",
+      "lastName": "sanivarapu",
+      "email": "ajay@gmail,com",
+      "phone": 2345645,
+      "company": "amezon",
+      "gender": "Male",
+      "dob": "2022-08-09",
+      "password": "12345",
+      "confirmpassword": "1234",
+      "id": 4
+>>>>>>> Stashed changes
     }
   ],
   "comments": [
